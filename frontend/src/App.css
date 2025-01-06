@@ -1,0 +1,134 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.app-header {
+  position: absolute; 
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.circle-toggle-wrapper {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.background-circle {
+  position: absolute;
+  width: 370px;
+  height: 370px;
+  border-radius: 50%;
+  background-color: hsl(var(--primary));
+  z-index: 1;
+}
+
+.foreground-circle {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background-color: #f5f5f5;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease;
+  z-index: 2;
+}
+
+.foreground-circle.register {
+  transform: translateX(-50px); 
+}
+
+.foreground-circle.login {
+  transform: translateX(50px);
+}
+
+.foreground-circle h1 {
+  margin: 5px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.foreground-circle input {
+  width: 70%;
+  margin: 2.5px 0;
+}
+.foreground-circle button {
+  width: 70%;
+  margin: 10px 0;
+  
+}
+
+.circle-toggle-btn {
+  background-color:  hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  z-index: 3;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.circle-toggle-btn:hover {
+  background-color: hsl(var(--destructive));
+}
+
+.foreground-circle .content-wrapper {
+  width: 90%;
+  height: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
